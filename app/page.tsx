@@ -1,7 +1,7 @@
 "use client";
 // app/page.tsx — Javari Gov Contracting · CR AudioViz AI · EIN 39-3646201 · May 2026
 import { useState } from "react";
-const T=[{"i": "\ud83d\udccb", "l": "Capability Statement", "d": "One-page capability statements", "h": "/capability"}, {"i": "\ud83d\udcdd", "l": "RFP Response", "d": "Government proposal writing", "h": "/rfp"}, {"i": "\ud83d\udd0d", "l": "NAICS Research", "d": "NAICS code identification", "h": "/naics"}, {"i": "\ud83d\udc9a", "l": "SBIR Grants", "d": "Small business grants", "h": "https://craudiovizai.com/grants"}];
+const T=[{"i": "\ud83d\udccb", "l": "Capability Statement", "d": "One-page capability statements", "h": "/capability"}, {"i": "\ud83d\udcdd", "l": "RFP Response", "d": "Government proposals", "h": "/rfp"}, {"i": "\ud83d\udd0d", "l": "NAICS Research", "d": "NAICS code identification", "h": "/naics"}, {"i": "\ud83d\udc9a", "l": "SBIR Grants", "d": "Small business grants", "h": "https://craudiovizai.com/grants"}];
 export default function P() {
   const [i,setI]=useState(""); const [o,setO]=useState(""); const [l,setL]=useState(false);
   async function go() { if(!i.trim())return; setL(true);setO("");
@@ -14,12 +14,12 @@ export default function P() {
       <a href="https://craudiovizai.com/auth/signup" style={{background:"#FF0800",color:"#fff",borderRadius:7,padding:"5px 14px",fontSize:12,fontWeight:700,textDecoration:"none"}}>Sign Up Free</a>
     </nav>
     <section style={{background:"linear-gradient(135deg,#1E3A5F,#040912)",padding:"48px 24px 40px",textAlign:"center"}}>
-      <h1 style={{fontSize:"clamp(22px,4vw,42px)",fontWeight:900,color:"#fff",margin:"0 0 10px",lineHeight:1.05}}>AI Tools for<br/><span style={{color:"#1E3A5F"}}>Government Contracting</span></h1>
-      <p style={{color:"rgba(255,255,255,0.7)",fontSize:15,margin:0}}>NAICS codes, capability statements, SAM.gov profiles, and proposal writing.</p>
+      <h1 style={{fontSize:"clamp(22px,4vw,42px)",fontWeight:900,color:"#fff",margin:"0 0 10px",lineHeight:1.05}}>Government<br/><span style={{color:"#1E3A5F"}}>Contracting Hub</span></h1>
+      <p style={{color:"rgba(255,255,255,0.7)",fontSize:15,margin:0}}>Capability statements, SAM.gov, NAICS, and federal proposal writing.</p>
     </section>
     <section style={{maxWidth:700,margin:"0 auto",padding:"24px 20px 0"}}>
       <div style={{background:"#0F1F32",border:"1px solid rgba(0,180,216,0.12)",borderRadius:14,padding:"18px 22px"}}>
-        <div style={{display:"flex",gap:8}}><input value={i} onChange={e=>setI(e.target.value)} onKeyDown={e=>e.key==="Enter"&&go()} placeholder="Write capability statement: 8(a) IT services company 15 employees cybersecurity focus" style={{flex:1,background:"#172D48",border:"1px solid rgba(0,180,216,0.15)",borderRadius:8,padding:"10px 12px",color:"#e2e8f0",fontSize:13,outline:"none",fontFamily:"system-ui"}}/>
+        <div style={{display:"flex",gap:8}}><input value={i} onChange={e=>setI(e.target.value)} onKeyDown={e=>e.key==="Enter"&&go()} placeholder="Write capability statement: 8a IT services cybersecurity 15 employees" style={{flex:1,background:"#172D48",border:"1px solid rgba(0,180,216,0.15)",borderRadius:8,padding:"10px 12px",color:"#e2e8f0",fontSize:13,outline:"none",fontFamily:"system-ui"}}/>
         <button onClick={go} disabled={l||!i.trim()} style={{background:l||!i.trim()?"#0F1F32":"#1E3A5F",color:l||!i.trim()?"#374151":"#1E3A5F",border:"1px solid rgba(0,180,216,0.2)",borderRadius:8,padding:"10px 18px",fontSize:13,fontWeight:700,cursor:l||!i.trim()?"not-allowed":"pointer",fontFamily:"system-ui"}}>{l?"...":"Go"}</button></div>
         {o&&<pre style={{marginTop:12,padding:"12px",background:"rgba(0,180,216,0.05)",border:"1px solid rgba(0,180,216,0.1)",borderRadius:8,fontSize:13,color:"#e2e8f0",lineHeight:1.65,whiteSpace:"pre-wrap",fontFamily:"system-ui",maxHeight:300,overflowY:"auto",margin:"12px 0 0"}}>{o}</pre>}
       </div>
